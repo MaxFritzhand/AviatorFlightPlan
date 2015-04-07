@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+  body {background-color:#16BC16}
+  h1   {color:#FFFFFF}
+  p    {color:#FFFFFF}
+  #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</head>
+<style type="text/css">
+/* Derived from http://www.devinrolsen.com/pure-css-horizontal-menu/ */
+
+#pagebody { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+#pagebody-inner { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+
+#alpha, #beta, #gamma, #delta {
+    display: inline; /* DO NOT EDIT */
+    position: inherit !important; /* DO NOT EDIT */
+    float: left; /* DO NOT EDIT */
+    min-height: 1px; /* DO NOT EDIT */
+}
+
+#centernav {
+  width: 900px; /* if you want your nav centered, set this to the width of your container, if you don't want it centered, change this number to 100% */
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+#dropnav
+{height:25px; background:#999;} /* Changes the height and bg color of the main menu */
+
+#dropnav ul
+{margin:0px; padding:0px;}
+
+#dropnav ul li
+{display:inline; float:left; list-style:none; margin-left:15px; position:relative; height:25px; width: 150px;} /* only edit the last 2 items - sets the width of the main menu */
+
+#dropnav li a
+{color:#FFF; text-decoration:none;} /* Changes the link color of items on the main menu */
+
+#dropnav li a:hover
+{color:#900; text-decoration:none;}/* Changes the hover color of items on the main menu */
+
+#dropnav li ul
+{margin:0px; padding:0px; display:none; position:absolute; left:0px; z-index: 99; top:25px; background-color:#CCC;} /* Only edit the last 2 items - set the top margin and background color of the submenus */
+
+#dropnav li:hover ul
+{display:block; width:150px;} /* sets the width of the submenus */
+
+#dropnav li li
+{list-style:none; display:list-item;} /* DO NOT EDIT */
+
+#dropnav li li a
+{color:#000; text-decoration:none;} /* Changes the link color of items in the submenu */
+
+#dropnav li li a:hover
+{color:#900; text-decoration:none;} /* Changes the hover color of items in the submenu */
+
+li#main  {padding-top: 2px;} /* Sets the padding of items in the main menu */
+
+</style>
+
+    <div id="Open up">
+    <div id="dropnav">
+        <ul>
+
+            <li id="">
+            <a href="#">SycaWeb</a>
+            <ul id="subnav">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Why joing the program?</a></li>
+                  <li><a href="#">What do we do?</a></li>
+                  <li><a href="#">Where is it located?</a></li>
+            </ul>
+            </li>
+
+            <li id="About">
+            <a href="#">Start Now</a>
+                <ul id="subnav">
+                      <li><a href="#">Locations</a></li>
+                      <li><a href="#">Opportunities</a></li>
+                      <li><a href="#">Is it worth it?</a></li>
+                      <li><a href="#">Who does it?</a></li>
+                </ul>
+            </li>
+
+            <li id="Why join the program?">
+            <a href="#">Interest Inventory</a>
+                <ul id="subnav">
+                      <li><a href="#">Take a quiz</a></li>
+                      <li><a href="#">Consulting</a></li>
+                      <li><a href="#">sub menu item </a></li>
+                      <li><a href="#">sub menu item 4</a></li>
+                </ul>
+            </li>
+
+            <li id="Staff">
+            <a href="#">Staff</a>
+
+                <ul id="subnav">
+                      <li><a href="#">Team playas</a></li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<body>
+
+<h1 style="font-family:calibri">Sycamore Schools</h1>
+<p style="font-family:calibri">Career Connections</p>
+<p>Go Aves! Beat Mason! Fill in the box, as to who you think is the best!!</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="http://skylinecrosstownshowdown.com/uploadIMG/new_team/91_sycamore_logo.jpg" draggable="true" ondragstart="drag(event)" width="180" height="75">
+<img id="drag2" src="http://activerain.trulia.com/image_store/uploads/5/6/6/8/5/ar131342677958665.png" draggable="true" ondragstart="drag(event)" width="180" height="75">
+</body>
+
+</html>
